@@ -13,6 +13,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import ReturnPolicy from "./pages/ReturnPolicy";
 import Admin from "./pages/Admin";
+import MessageButton from "./components/MessageButton";
 
 // Remplacez cette clé par votre clé publique Stripe de test
 const stripePromise = loadStripe('pk_test_51XYZabcdefghijklmnopqrstuvwxyz');
@@ -35,6 +36,7 @@ const App = () => (
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <MessageButton />
         </BrowserRouter>
       </TooltipProvider>
     </Elements>

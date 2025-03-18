@@ -18,7 +18,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useForm } from 'react-hook-form';
 import { useToast } from '@/hooks/use-toast';
-import { Lock, CreditCard, ChevronRight, ExternalLink } from 'lucide-react';
+import { Lock, CreditCard, ChevronRight, ExternalLink, MessageCircle } from 'lucide-react';
+import ClientMessages from '@/components/admin/ClientMessages';
 
 // Schéma de validation pour le formulaire
 const stripeFormSchema = z.object({
@@ -30,6 +31,7 @@ const stripeFormSchema = z.object({
 const Admin = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [activeSection, setActiveSection] = useState<'stripe' | 'messages'>('stripe');
   
   const form = useForm<z.infer<typeof stripeFormSchema>>({
     resolver: zodResolver(stripeFormSchema),
@@ -89,9 +91,23 @@ const Admin = () => {
               <h2 className="font-semibold text-lg mb-4">Menu</h2>
               <ul className="space-y-2">
                 <li>
-                  <Button variant="ghost" className="w-full justify-start bg-blue-50">
+                  <Button 
+                    variant={activeSection === 'stripe' ? "default" : "ghost"} 
+                    className="w-full justify-start"
+                    onClick={() => setActiveSection('stripe')}
+                  >
                     <CreditCard className="mr-2 h-4 w-4" />
                     Configuration Stripe
+                  </Button>
+                </li>
+                <li>
+                  <Button 
+                    variant={activeSection === 'messages' ? "default" : "ghost"} 
+                    className="w-full justify-start"
+                    onClick={() => setActiveSection('messages')}
+                  >
+                    <MessageCircle className="mr-2 h-4 w-4" />
+                    Messages clients
                   </Button>
                 </li>
                 <li>
@@ -117,103 +133,107 @@ const Admin = () => {
           </div>
           
           <div className="col-span-2">
-            <div className="bg-white border rounded-xl p-6 shadow-sm">
-              <div className="flex items-center mb-6">
-                <Lock className="h-5 w-5 text-gray-600 mr-2" />
-                <h2 className="text-xl font-semibold">Configuration Stripe</h2>
-              </div>
-              
-              <div className="mb-6">
-                <p className="text-gray-600 mb-4">
-                  Connectez votre compte Stripe pour activer les paiements sur votre site VisioEar.
-                  Ces informations sont stockées de manière sécurisée et ne sont jamais partagées.
-                </p>
+            {activeSection === 'stripe' && (
+              <div className="bg-white border rounded-xl p-6 shadow-sm">
+                <div className="flex items-center mb-6">
+                  <Lock className="h-5 w-5 text-gray-600 mr-2" />
+                  <h2 className="text-xl font-semibold">Configuration Stripe</h2>
+                </div>
                 
-                <a 
-                  href="https://dashboard.stripe.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-medical hover:underline flex items-center text-sm mb-6"
-                >
-                  Accéder au dashboard Stripe
-                  <ExternalLink className="ml-1 h-3 w-3" />
-                </a>
-              </div>
-              
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <FormField
-                    control={form.control}
-                    name="apiKey"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Clé API Stripe</FormLabel>
-                        <FormControl>
-                          <Input 
-                            placeholder="sk_test_..." 
-                            {...field} 
-                            type="password"
-                          />
-                        </FormControl>
-                        <FormDescription>
-                          Vous trouverez votre clé API dans les paramètres de votre compte Stripe.
-                        </FormDescription>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                <div className="mb-6">
+                  <p className="text-gray-600 mb-4">
+                    Connectez votre compte Stripe pour activer les paiements sur votre site VisioEar.
+                    Ces informations sont stockées de manière sécurisée et ne sont jamais partagées.
+                  </p>
                   
-                  <FormField
-                    control={form.control}
-                    name="webhookSecret"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Secret du Webhook</FormLabel>
-                        <FormControl>
-                          <Input 
-                            placeholder="whsec_..." 
-                            {...field}
-                            type="password"
-                          />
-                        </FormControl>
-                        <FormDescription>
-                          Utilisé pour vérifier les événements provenant de Stripe.
-                        </FormDescription>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="accountId"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>ID du compte Stripe</FormLabel>
-                        <FormControl>
-                          <Input 
-                            placeholder="acct_..." 
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormDescription>
-                          Identifiant unique de votre compte Stripe.
-                        </FormDescription>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <Button 
-                    type="submit" 
-                    className="w-full sm:w-auto"
-                    disabled={isSubmitting}
+                  <a 
+                    href="https://dashboard.stripe.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-medical hover:underline flex items-center text-sm mb-6"
                   >
-                    {isSubmitting ? 'Enregistrement...' : 'Enregistrer la configuration'}
-                  </Button>
-                </form>
-              </Form>
-            </div>
+                    Accéder au dashboard Stripe
+                    <ExternalLink className="ml-1 h-3 w-3" />
+                  </a>
+                </div>
+                
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <FormField
+                      control={form.control}
+                      name="apiKey"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Clé API Stripe</FormLabel>
+                          <FormControl>
+                            <Input 
+                              placeholder="sk_test_..." 
+                              {...field} 
+                              type="password"
+                            />
+                          </FormControl>
+                          <FormDescription>
+                            Vous trouverez votre clé API dans les paramètres de votre compte Stripe.
+                          </FormDescription>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <FormField
+                      control={form.control}
+                      name="webhookSecret"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Secret du Webhook</FormLabel>
+                          <FormControl>
+                            <Input 
+                              placeholder="whsec_..." 
+                              {...field}
+                              type="password"
+                            />
+                          </FormControl>
+                          <FormDescription>
+                            Utilisé pour vérifier les événements provenant de Stripe.
+                          </FormDescription>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <FormField
+                      control={form.control}
+                      name="accountId"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>ID du compte Stripe</FormLabel>
+                          <FormControl>
+                            <Input 
+                              placeholder="acct_..." 
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormDescription>
+                            Identifiant unique de votre compte Stripe.
+                          </FormDescription>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <Button 
+                      type="submit" 
+                      className="w-full sm:w-auto"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? 'Enregistrement...' : 'Enregistrer la configuration'}
+                    </Button>
+                  </form>
+                </Form>
+              </div>
+            )}
+            
+            {activeSection === 'messages' && <ClientMessages />}
           </div>
         </div>
       </div>
