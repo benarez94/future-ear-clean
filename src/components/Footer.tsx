@@ -1,111 +1,123 @@
 
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube, CreditCard, ShieldCheck } from 'lucide-react';
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <h3 className="text-2xl font-bold mb-6">VisioEar</h3>
-            <p className="text-gray-400 mb-6">
-              Transformez votre hygiène auriculaire avec notre produit révolutionnaire. Visualisez et nettoyez vos oreilles en toute sécurité.
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div>
+            <Link to="/" className="text-2xl font-semibold text-white mb-4 inline-block">VisioEar</Link>
+            <p className="text-gray-400 mb-4">
+              L'innovation au service de votre hygiène auriculaire.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-medical transition-colors duration-300">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-medical transition-colors duration-300">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-medical transition-colors duration-300">
-                <Twitter className="h-5 w-5" />
-              </a>
-            </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <h4 className="text-xl font-semibold mb-6">Liens rapides</h4>
-            <ul className="space-y-3">
-              {['Accueil', 'Produit', 'Témoignages', 'FAQ', 'Contact', 'Livraison'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <h4 className="text-xl font-semibold mb-6">Informations</h4>
-            <ul className="space-y-3">
               {[
-                'Mentions légales',
-                'Politique de confidentialité',
-                'Conditions générales de vente',
-                'Remboursements',
-                'Garantie'
-              ].map((item) => (
+                { icon: <Facebook className="h-5 w-5" />, href: "https://facebook.com" },
+                { icon: <Instagram className="h-5 w-5" />, href: "https://instagram.com" },
+                { icon: <Twitter className="h-5 w-5" />, href: "https://twitter.com" },
+                { icon: <Youtube className="h-5 w-5" />, href: "https://youtube.com" }
+              ].map((social, index) => (
+                <motion.a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gray-800 p-2 rounded-full text-gray-400 hover:text-white hover:bg-medical transition-colors duration-300"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  {social.icon}
+                </motion.a>
+              ))}
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Navigation</h3>
+            <ul className="space-y-2">
+              {['Accueil', 'Produit', 'Témoignages', 'FAQ'].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">
+                  <a 
+                    href={`#${item.toLowerCase()}`}
+                    className="text-gray-400 hover:text-medical transition-colors duration-300"
+                  >
                     {item}
                   </a>
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
           
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <h4 className="text-xl font-semibold mb-6">Contact</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-medical flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400">123 Boulevard Victor Hugo, 75016 Paris, France</span>
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Informations légales</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link 
+                  to="/mentions-legales"
+                  className="text-gray-400 hover:text-medical transition-colors duration-300"
+                >
+                  Mentions légales
+                </Link>
               </li>
-              <li className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-medical flex-shrink-0" />
-                <span className="text-gray-400">+33 1 23 45 67 89</span>
+              <li>
+                <Link 
+                  to="/politique-confidentialite"
+                  className="text-gray-400 hover:text-medical transition-colors duration-300"
+                >
+                  Politique de confidentialité
+                </Link>
               </li>
-              <li className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-medical flex-shrink-0" />
-                <span className="text-gray-400">contact@visioear.com</span>
+              <li>
+                <Link 
+                  to="/conditions-generales-vente"
+                  className="text-gray-400 hover:text-medical transition-colors duration-300"
+                >
+                  CGV
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/politique-retour"
+                  className="text-gray-400 hover:text-medical transition-colors duration-300"
+                >
+                  Politique de retour
+                </Link>
               </li>
             </ul>
-          </motion.div>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Contact</h3>
+            <ul className="space-y-2 text-gray-400">
+              <li>support@visioear.com</li>
+              <li>01 23 45 67 89</li>
+              <li>123 Avenue des Champs-Élysées, 75008 Paris</li>
+            </ul>
+            
+            <div className="mt-6 flex space-x-3">
+              <div className="bg-gray-800 p-2 rounded-lg flex items-center">
+                <CreditCard className="h-5 w-5 text-medical mr-2" />
+                <span className="text-xs">Paiement sécurisé</span>
+              </div>
+              <div className="bg-gray-800 p-2 rounded-lg flex items-center">
+                <ShieldCheck className="h-5 w-5 text-medical mr-2" />
+                <span className="text-xs">Livraison assurée</span>
+              </div>
+            </div>
+          </div>
         </div>
         
-        <div className="border-t border-gray-800 pt-8 mt-8">
+        <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} VisioEar. Tous droits réservés.
+              © {new Date().getFullYear()} VisioEar. Tous droits réservés. SIRET: 123 456 789 00012
             </p>
-            <div className="flex space-x-4">
-              <img src="/images/payment-visa.png" alt="Visa" className="h-8" />
-              <img src="/images/payment-mastercard.png" alt="Mastercard" className="h-8" />
-              <img src="/images/payment-paypal.png" alt="PayPal" className="h-8" />
-              <img src="/images/payment-apple.png" alt="Apple Pay" className="h-8" />
+            
+            <div>
+              <img src="/images/payment-methods.png" alt="Méthodes de paiement" className="h-6" />
             </div>
           </div>
         </div>
