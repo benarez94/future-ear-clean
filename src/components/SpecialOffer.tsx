@@ -45,25 +45,25 @@ const SpecialOffer = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-block px-3 py-1 rounded-full bg-red-500 text-white text-sm font-medium mb-4">
-                Offre spéciale limitée
+                Limited Time Special Offer
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Offrez-vous une hygiène auriculaire professionnelle
+                Get Professional Ear Hygiene at Home
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Ne manquez pas cette occasion d'acquérir votre VisioEar à un prix exceptionnel. Commandez maintenant et bénéficiez de 33% de réduction !
+                Don't miss this opportunity to get your VisioEar at an exceptional price. Order now and benefit from a 33% discount!
               </p>
               
               <div className="flex items-center space-x-2 mb-8">
-                <Timer className="h-6 w-6 text-red-500" />
-                <span className="text-red-500 font-medium">Cette offre expire dans :</span>
+                <Timer className="h-6 w-6 text-red-500" aria-hidden="true" />
+                <span className="text-red-500 font-medium">This offer expires in:</span>
               </div>
               
               <div className="flex space-x-4 mb-8">
                 {[
-                  { value: time.hours, label: 'Heures' },
+                  { value: time.hours, label: 'Hours' },
                   { value: time.minutes, label: 'Minutes' },
-                  { value: time.seconds, label: 'Secondes' }
+                  { value: time.seconds, label: 'Seconds' }
                 ].map((item, index) => (
                   <div key={index} className="text-center">
                     <div className="w-16 h-16 bg-gray-900 text-white rounded-xl flex items-center justify-center text-2xl font-bold">
@@ -76,15 +76,15 @@ const SpecialOffer = () => {
               
               <div className="space-y-4 mb-8">
                 {[
-                  'Produit certifié CE',
-                  'Garantie 1 an incluse',
-                  'Livraison express offerte',
-                  '3 embouts différents inclus',
-                  'Application gratuite iOS & Android'
+                  'CE certified product',
+                  '1-year warranty included',
+                  'Free express shipping',
+                  '3 different tips included',
+                  'Free iOS & Android app'
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start space-x-2">
                     <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="h-3 w-3 text-green-600" />
+                      <Check className="h-3 w-3 text-green-600" aria-hidden="true" />
                     </div>
                     <span className="text-gray-600">{feature}</span>
                   </div>
@@ -92,8 +92,8 @@ const SpecialOffer = () => {
               </div>
               
               <div className="flex items-center justify-start space-x-2 text-sm text-gray-500 mb-4">
-                <AlertTriangle className="h-4 w-4" />
-                <span>Il ne reste que 7 produits en stock à ce prix !</span>
+                <AlertTriangle className="h-4 w-4" aria-hidden="true" />
+                <span>Only 7 products left in stock at this price!</span>
               </div>
             </div>
             
@@ -102,7 +102,7 @@ const SpecialOffer = () => {
                 <div className="relative mb-8">
                   <img 
                     src="/images/product-package.png" 
-                    alt="VisioEar - Pack complet" 
+                    alt="VisioEar - Complete Package" 
                     className="w-64 h-64 object-contain mx-auto"
                     loading="lazy"
                   />
@@ -112,24 +112,25 @@ const SpecialOffer = () => {
                 </div>
                 
                 <div className="flex items-center justify-center space-x-3 mb-6">
-                  <span className="text-2xl text-gray-400 line-through">59,90€</span>
-                  <span className="text-4xl font-bold text-medical">39,90€</span>
+                  <span className="text-2xl text-gray-400 line-through">$59.90</span>
+                  <span className="text-4xl font-bold text-medical">$39.90</span>
                 </div>
                 
                 <motion.button
                   className="button-shine w-full py-4 px-8 bg-medical text-white rounded-xl font-semibold text-lg transition-all duration-300 mb-4"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  aria-label="Add to cart"
                 >
-                  Ajouter au panier
+                  Add to Cart
                 </motion.button>
                 
                 <div className="flex items-center justify-center mb-6">
-                  <img src="/images/payment-methods.png" alt="Méthodes de paiement" className="h-8" />
+                  <img src="/images/payment-methods.png" alt="Payment methods" className="h-8" />
                 </div>
                 
                 <div className="text-center text-sm text-gray-500">
-                  <p>Livraison gratuite & remboursement sous 30 jours</p>
+                  <p>Free shipping & 30-day money-back guarantee</p>
                 </div>
               </div>
             </div>

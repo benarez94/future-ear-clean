@@ -5,24 +5,24 @@ import { Truck, Shield, Clock, CreditCard } from 'lucide-react';
 const TrustBadges = () => {
   const badges = [
     {
-      icon: <Truck className="h-6 w-6" />,
-      title: 'Livraison rapide',
-      description: 'Expédition sous 24h'
+      icon: <Truck className="h-6 w-6" aria-hidden="true" />,
+      title: 'Fast Delivery',
+      description: 'Shipped within 24h'
     },
     {
-      icon: <Shield className="h-6 w-6" />,
-      title: 'Garantie 1 an',
-      description: 'Satisfaction assurée'
+      icon: <Shield className="h-6 w-6" aria-hidden="true" />,
+      title: '1 Year Warranty',
+      description: 'Satisfaction guaranteed'
     },
     {
-      icon: <Clock className="h-6 w-6" />,
-      title: 'Support 24/7',
-      description: 'À votre service'
+      icon: <Clock className="h-6 w-6" aria-hidden="true" />,
+      title: '24/7 Support',
+      description: 'At your service'
     },
     {
-      icon: <CreditCard className="h-6 w-6" />,
-      title: 'Paiement sécurisé',
-      description: 'Transactions cryptées'
+      icon: <CreditCard className="h-6 w-6" aria-hidden="true" />,
+      title: 'Secure Payment',
+      description: 'Encrypted transactions'
     }
   ];
   

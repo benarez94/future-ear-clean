@@ -44,7 +44,7 @@ const Navbar = () => {
           </div>
           
           <nav className="hidden md:flex space-x-8">
-            {['Accueil', 'Produit', 'Témoignages', 'FAQ'].map((item) => (
+            {['Home', 'Product', 'Testimonials', 'FAQ'].map((item) => (
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -62,6 +62,7 @@ const Navbar = () => {
               className="p-2 rounded-full bg-medical/10 text-medical hover:bg-medical/20 transition-colors duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
+              aria-label="Shopping Cart"
             >
               <ShoppingCart className="w-5 h-5" />
             </motion.button>
@@ -70,6 +71,7 @@ const Navbar = () => {
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="p-2 rounded-full bg-medical/10 text-medical hover:bg-medical/20 transition-colors duration-300"
+                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               >
                 {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -88,7 +90,7 @@ const Navbar = () => {
           transition={{ duration: 0.3 }}
         >
           <div className="px-4 py-6 space-y-4">
-            {['Accueil', 'Produit', 'Témoignages', 'FAQ'].map((item) => (
+            {['Home', 'Product', 'Testimonials', 'FAQ'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}

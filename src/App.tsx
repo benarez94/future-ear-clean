@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,7 +14,7 @@ import ReturnPolicy from "./pages/ReturnPolicy";
 import Admin from "./pages/Admin";
 import MessageButton from "./components/MessageButton";
 
-// Remplacez cette clé par votre clé publique Stripe de test
+// Replace with your Stripe test public key
 const stripePromise = loadStripe('pk_test_51XYZabcdefghijklmnopqrstuvwxyz');
 const queryClient = new QueryClient();
 
@@ -28,11 +27,16 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/legal-notice" element={<LegalNotice />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-conditions" element={<TermsAndConditions />} />
+            <Route path="/return-policy" element={<ReturnPolicy />} />
+            <Route path="/admin" element={<Admin />} />
+            {/* Keep original routes for backward compatibility */}
             <Route path="/mentions-legales" element={<LegalNotice />} />
             <Route path="/politique-confidentialite" element={<PrivacyPolicy />} />
             <Route path="/conditions-generales-vente" element={<TermsAndConditions />} />
             <Route path="/politique-retour" element={<ReturnPolicy />} />
-            <Route path="/admin" element={<Admin />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

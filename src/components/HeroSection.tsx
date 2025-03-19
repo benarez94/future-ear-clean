@@ -4,7 +4,7 @@ import { ArrowRight, Check } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-blue-50 to-white pt-24">
+    <div id="home" className="relative min-h-screen bg-gradient-to-b from-blue-50 to-white pt-24">
       <div className="absolute inset-0 bg-[url('/images/pattern-bg.svg')] bg-repeat opacity-5"></div>
       
       <div className="section-container relative z-10">
@@ -22,7 +22,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6 }}
             >
               <span className="px-3 py-1 rounded-full bg-medical/10 text-medical text-sm font-medium">
-                Technologie innovante
+                Innovative Technology
               </span>
             </motion.div>
             
@@ -32,8 +32,8 @@ const HeroSection = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Nettoyage d'oreilles<br />
-              <span className="text-gradient">nouvelle génération</span>
+              Next Generation<br />
+              <span className="text-gradient">Ear Cleaning</span>
             </motion.h1>
             
             <motion.p 
@@ -42,7 +42,7 @@ const HeroSection = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Une caméra HD intégrée pour visualiser et nettoyer vos oreilles en toute sécurité. Connectée à notre application, suivez le processus en temps réel.
+              An integrated HD camera to visualize and clean your ears safely. Connected to our app, follow the process in real-time.
             </motion.p>
             
             <motion.div 
@@ -52,12 +52,12 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <motion.a
-                href="#produit"
+                href="#product"
                 className="button-shine px-8 py-4 bg-medical text-white rounded-full font-medium flex items-center justify-center group"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Découvrir le produit
+                Discover the product
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </motion.a>
               
@@ -67,7 +67,7 @@ const HeroSection = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Voir la démonstration
+                Watch the demo
               </motion.a>
             </motion.div>
             
@@ -77,7 +77,7 @@ const HeroSection = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1 }}
             >
-              {['Sécuritaire', 'Facile à utiliser', 'HD 1080p'].map((feature, index) => (
+              {['Safe to use', 'Easy to operate', 'HD 1080p'].map((feature, index) => (
                 <div key={index} className="flex items-center space-x-2">
                   <div className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
                     <Check className="h-3 w-3 text-green-600" />
@@ -99,7 +99,7 @@ const HeroSection = () => {
             
             <motion.img
               src="/images/product-main.png"
-              alt="VisioEar - Nettoyeur d'oreilles avec caméra HD"
+              alt="VisioEar - Ear cleaner with HD camera"
               className="w-full h-auto max-w-md mx-auto animate-float"
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
@@ -112,7 +112,7 @@ const HeroSection = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 1.2, duration: 0.6 }}
             >
-              <img src="/images/app-screen-1.jpg" alt="Application mobile" className="w-28 h-auto rounded-lg" />
+              <img src="/images/app-screen-1.jpg" alt="Mobile App Interface" className="w-28 h-auto rounded-lg" />
             </motion.div>
             
             <motion.div 
@@ -121,7 +121,7 @@ const HeroSection = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 1.4, duration: 0.6 }}
             >
-              <img src="/images/app-screen-2.jpg" alt="Visualisation HD" className="w-28 h-auto rounded-lg" />
+              <img src="/images/app-screen-2.jpg" alt="HD Visualization" className="w-28 h-auto rounded-lg" />
             </motion.div>
           </motion.div>
         </div>
