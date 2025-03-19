@@ -1,28 +1,23 @@
 
 import { motion } from 'framer-motion';
-import { Truck, Shield, Clock, CreditCard } from 'lucide-react';
 
 const TrustBadges = () => {
   const badges = [
     {
-      icon: <Truck className="h-6 w-6" aria-hidden="true" />,
-      title: 'Fast Delivery',
-      description: 'Shipped within 24h'
+      image: "/images/fast-delivery-badge.png",
+      alt: "Fast Delivery",
     },
     {
-      icon: <Shield className="h-6 w-6" aria-hidden="true" />,
-      title: '1 Year Warranty',
-      description: 'Satisfaction guaranteed'
+      image: "/images/warranty-badge.png",
+      alt: "1 Year Warranty",
     },
     {
-      icon: <Clock className="h-6 w-6" aria-hidden="true" />,
-      title: '24/7 Support',
-      description: 'At your service'
+      image: "/images/support-badge.png",
+      alt: "24/7 Support",
     },
     {
-      icon: <CreditCard className="h-6 w-6" aria-hidden="true" />,
-      title: 'Secure Payment',
-      description: 'Encrypted transactions'
+      image: "/images/secure-payment-badge.png",
+      alt: "Secure Payment",
     }
   ];
   
@@ -39,11 +34,12 @@ const TrustBadges = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <div className="w-12 h-12 rounded-full bg-medical/10 flex items-center justify-center text-medical mb-4">
-                {badge.icon}
-              </div>
-              <h3 className="font-semibold text-gray-900">{badge.title}</h3>
-              <p className="text-sm text-gray-500 mt-1">{badge.description}</p>
+              <img 
+                src={badge.image} 
+                alt={badge.alt} 
+                className="h-20 w-auto object-contain mb-2"
+                loading="lazy"
+              />
             </motion.div>
           ))}
         </div>
