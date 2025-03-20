@@ -6,33 +6,33 @@ const ProductFeatures = () => {
   const features = [
     {
       icon: <Camera className="h-6 w-6" />,
-      title: 'Caméra HD 1080p',
-      description: 'Visualisez l\'intérieur de vos oreilles avec une clarté exceptionnelle grâce à notre technologie de caméra haute définition.'
+      title: 'HD 1080p Camera',
+      description: 'Visualize the inside of your ears with exceptional clarity thanks to our high-definition camera technology.'
     },
     {
       icon: <Wifi className="h-6 w-6" />,
-      title: 'Connexion sans fil',
-      description: 'Transmettez des images en temps réel à votre smartphone ou tablette via la connexion Wi-Fi sécurisée.'
+      title: 'Wireless Connection',
+      description: 'Transmit real-time images to your smartphone or tablet via secure Wi-Fi connection.'
     },
     {
       icon: <BatteryFull className="h-6 w-6" />,
-      title: 'Batterie longue durée',
-      description: 'Jusqu\'à 2 heures d\'utilisation continue avec une seule charge, suffisant pour plusieurs utilisations.'
+      title: 'Long-lasting Battery',
+      description: 'Up to 2 hours of continuous use on a single charge, enough for multiple uses.'
     },
     {
       icon: <Smartphone className="h-6 w-6" />,
-      title: 'Application dédiée',
-      description: 'Contrôlez la caméra, enregistrez des vidéos et prenez des photos directement depuis notre application intuitive.'
+      title: 'Dedicated App',
+      description: 'Control the camera, record videos and take photos directly from our intuitive application.'
     },
     {
       icon: <Shield className="h-6 w-6" />,
-      title: 'Embouts sécurisés',
-      description: 'Conçus pour éviter toute insertion trop profonde, les embouts offrent une utilisation en toute sécurité.'
+      title: 'Secure Tips',
+      description: 'Designed to prevent insertion too deep, the tips offer completely safe use.'
     },
     {
       icon: <Zap className="h-6 w-6" />,
-      title: 'Éclairage LED',
-      description: 'Six LED ajustables intégrées permettent une visibilité parfaite même dans les zones les plus sombres.'
+      title: 'LED Lighting',
+      description: 'Six integrated adjustable LEDs allow perfect visibility even in the darkest areas.'
     }
   ];
 
@@ -52,7 +52,7 @@ const ProductFeatures = () => {
   };
 
   return (
-    <section id="produit" className="py-20 bg-white overflow-hidden">
+    <section id="product" className="py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -62,11 +62,11 @@ const ProductFeatures = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           <span className="px-3 py-1 rounded-full bg-medical/10 text-medical text-sm font-medium">
-            Caractéristiques
+            Features
           </span>
-          <h2 className="mt-4 text-3xl md:text-4xl font-bold">Une technologie révolutionnaire</h2>
+          <h2 className="mt-4 text-3xl md:text-4xl font-bold">Revolutionary Technology</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Découvrez les caractéristiques exceptionnelles qui font de notre produit le nettoyeur d'oreilles le plus avancé du marché.
+            Discover the exceptional features that make our product the most advanced ear cleaner on the market.
           </p>
         </motion.div>
 
@@ -82,7 +82,7 @@ const ProductFeatures = () => {
             <div className="relative z-10">
               <img 
                 src="/images/product-closeup.png" 
-                alt="VisioEar en détail" 
+                alt="VisioEar in detail" 
                 className="w-full h-auto rounded-3xl shadow-xl"
                 loading="lazy"
               />
@@ -99,8 +99,8 @@ const ProductFeatures = () => {
                   <Camera className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Caméra HD</h4>
-                  <p className="text-sm text-gray-600">Image claire et précise pour une visualisation parfaite</p>
+                  <h4 className="font-semibold text-gray-900">HD Camera</h4>
+                  <p className="text-sm text-gray-600">Clear and precise image for perfect visualization</p>
                 </div>
               </div>
             </motion.div>
@@ -138,9 +138,9 @@ const ProductFeatures = () => {
         >
           <div className="md:flex items-center justify-between">
             <div className="mb-6 md:mb-0">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Application VisioEar Connect</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">VisioEar Connect App</h3>
               <p className="text-gray-600 max-w-lg">
-                Notre application gratuite vous permet de visualiser, d'enregistrer et de partager des images avec votre médecin si nécessaire. Téléchargez-la dès maintenant sur App Store ou Google Play.
+                Our free app allows you to view, record and share images with your doctor if necessary. Download it now on App Store or Google Play.
               </p>
             </div>
             <div className="flex space-x-4">
