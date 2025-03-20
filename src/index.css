@@ -89,4 +89,10 @@
   .product-shadow {
     @apply relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-3/4 after:h-4 after:bg-black/10 after:blur-xl after:rounded-full;
   }
+
+  /* Progress circle animation */
+  .circle-progress {
+    transition: stroke-dasharray 1s ease;
+  }
 }
+

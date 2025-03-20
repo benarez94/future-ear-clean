@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -99,7 +98,11 @@ export default {
 				},
 				'shimmer': {
 					'100%': { transform: 'translateX(100%)' }
-				}
+				},
+				'progress-fill': {
+					'0%': { 'stroke-dasharray': '0 251.327' },
+					'100%': { 'stroke-dasharray': 'var(--progress-value) 251.327' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -110,7 +113,8 @@ export default {
 				'slide-up': 'slide-up 0.5s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
 				'rotate-slow': 'rotate-slow 8s linear infinite',
-				'shimmer': 'shimmer 2s infinite'
+				'shimmer': 'shimmer 2s infinite',
+				'progress-fill': 'progress-fill 1.5s ease-out forwards',
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
