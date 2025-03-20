@@ -26,9 +26,9 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				medical: {
-					light: '#e6f2ff',
-					DEFAULT: '#3a86ff',
-					dark: '#2563eb'
+					light: '#f3f3f3',
+					DEFAULT: '#333333',
+					dark: '#000000'
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',

@@ -20,43 +20,43 @@ const Testimonials = () => {
     {
       name: "Marie Dubois",
       avatar: "/images/testimonial-1.jpg",
-      role: "Utilisatrice régulière",
-      content: "J'avais constamment des problèmes d'accumulation de cérumen et des infections d'oreille récurrentes. Depuis que j'utilise VisioEar, je peux nettoyer mes oreilles efficacement et en toute sécurité. La caméra me permet de voir exactement ce que je fais, c'est révolutionnaire !",
+      role: "Regular User",
+      content: "I constantly had issues with earwax buildup and recurring ear infections. Since using VisioEar, I've been able to clean my ears effectively and safely. The camera allows me to see exactly what I'm doing - it's revolutionary!",
       rating: 5
     },
     {
       name: "Thomas Martin",
       avatar: "/images/testimonial-2.jpg",
-      role: "Père de famille",
-      content: "Mes enfants ont souvent des problèmes d'oreilles et il était difficile de voir ce qui se passait à l'intérieur. VisioEar nous permet maintenant de surveiller l'état de leurs oreilles et de partager les images avec notre médecin lors des consultations. Un outil indispensable !",
+      role: "Father",
+      content: "My children often have ear problems, and it was difficult to see what was going on inside. VisioEar now allows us to monitor the condition of their ears and share images with our doctor during consultations. An essential tool!",
       rating: 5
     },
     {
       name: "Sophie Laurent",
       avatar: "/images/testimonial-3.jpg",
-      role: "Professeur de natation",
-      content: "En tant que nageuse professionnelle, l'eau retenue dans mes oreilles était un problème constant. VisioEar m'a permis de vérifier et nettoyer mes oreilles après chaque entraînement. Je le recommande à tous mes élèves !",
+      role: "Swimming Instructor",
+      content: "As a professional swimmer, water trapped in my ears was a constant problem. VisioEar has allowed me to check and clean my ears after each training session. I recommend it to all my students!",
       rating: 4
     },
     {
       name: "Jean Dupont",
       avatar: "/images/testimonial-4.jpg",
-      role: "Médecin ORL",
-      content: "En tant que professionnel de la santé, je recommande VisioEar à mes patients qui souhaitent maintenir une bonne hygiène auriculaire. L'appareil permet une visualisation claire et un nettoyage précis, ce qui réduit considérablement les risques d'endommager le canal auditif.",
+      role: "ENT Physician",
+      content: "As a healthcare professional, I recommend VisioEar to my patients who want to maintain good ear hygiene. The device allows for clear visualization and precise cleaning, which significantly reduces the risk of damaging the ear canal.",
       rating: 5
     },
     {
       name: "Émilie Bernard",
       avatar: "/images/testimonial-5.jpg",
-      role: "Mère de deux enfants",
-      content: "Mes enfants détestaient nettoyer leurs oreilles jusqu'à ce que j'achète VisioEar. Maintenant, ils trouvent cela fascinant de voir l'intérieur de leurs oreilles sur l'écran de mon téléphone. Un excellent moyen de leur apprendre l'importance de l'hygiène personnelle !",
+      role: "Mother of Two",
+      content: "My children hated cleaning their ears until I bought VisioEar. Now they find it fascinating to see inside their ears on my phone screen. An excellent way to teach them the importance of personal hygiene!",
       rating: 5
     },
     {
       name: "Lucas Moreau",
       avatar: "/images/testimonial-6.jpg",
-      role: "Ingénieur du son",
-      content: "Dans mon métier, avoir des oreilles propres est essentiel. VisioEar m'aide à maintenir une excellente hygiène auriculaire, ce qui améliore ma perception auditive. La qualité de la caméra est impressionnante et l'application est très intuitive.",
+      role: "Sound Engineer",
+      content: "In my profession, having clean ears is essential. VisioEar helps me maintain excellent ear hygiene, which enhances my auditory perception. The camera quality is impressive and the app is very intuitive.",
       rating: 5
     }
   ];
@@ -120,7 +120,7 @@ const Testimonials = () => {
   }, [isMobile]);
 
   return (
-    <section id="témoignages" className="py-16 md:py-20 bg-white overflow-hidden">
+    <section id="testimonials" className="py-16 md:py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-10 md:mb-16"
@@ -130,11 +130,11 @@ const Testimonials = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           <span className="px-3 py-1 rounded-full bg-medical/10 text-medical text-sm font-medium">
-            Témoignages
+            Testimonials
           </span>
-          <h2 className="mt-4 text-2xl md:text-4xl font-bold">Ce que nos clients disent</h2>
+          <h2 className="mt-4 text-2xl md:text-4xl font-bold">What Our Customers Say</h2>
           <p className="mt-4 text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Découvrez les expériences de personnes qui ont transformé leur hygiène auriculaire grâce à VisioEar
+            Discover the experiences of people who have transformed their ear hygiene with VisioEar
           </p>
         </motion.div>
 
@@ -275,9 +275,9 @@ const Testimonials = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           {[
-            { number: '10k+', label: 'Clients satisfaits' },
-            { number: '97%', label: 'Taux de satisfaction' },
-            { number: '50+', label: 'Pays desservis' }
+            { number: '10k+', label: 'Satisfied Customers' },
+            { number: '97%', label: 'Satisfaction Rate' },
+            { number: '50+', label: 'Countries Served' }
           ].map((stat, index) => (
             <motion.div
               key={index}

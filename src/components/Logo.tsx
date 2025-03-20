@@ -29,8 +29,8 @@ const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
         {/* Ear Shape with Gradient */}
         <defs>
           <linearGradient id="earGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#3a86ff" />
-            <stop offset="100%" stopColor="#2563eb" />
+            <stop offset="0%" stopColor="#333333" />
+            <stop offset="100%" stopColor="#000000" />
           </linearGradient>
         </defs>
         <g>
@@ -44,10 +44,10 @@ const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
           <circle cx="47" cy="52" r="2" fill="white" />
           
           {/* Text - VisioEar */}
-          <text x="100" y="60" fontFamily="Arial, sans-serif" fontSize="36" fontWeight="bold" fill="#2563eb">VisioEar</text>
+          <text x="100" y="60" fontFamily="Arial, sans-serif" fontSize="36" fontWeight="bold" fill="#333333">VisioEar</text>
           
           {/* Tagline */}
-          <text x="100" y="80" fontFamily="Arial, sans-serif" fontSize="14" fill="#64748b">Advanced Ear Care</text>
+          <text x="100" y="80" fontFamily="Arial, sans-serif" fontSize="14" fill="#555555">Advanced Ear Care</text>
         </g>
       </svg>
     </motion.div>
