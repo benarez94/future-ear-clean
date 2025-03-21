@@ -2,12 +2,28 @@
 import React from 'react';
 import CircularProgress from './CircularProgress';
 import { motion } from 'framer-motion';
+import { CheckCircle, Award, ThumbsUp } from 'lucide-react';
 
 const ResultsSection: React.FC = () => {
   const results = [
-    { percentage: 100, label: 'Customer Satisfaction' },
-    { percentage: 97, label: 'Effectiveness Rate' },
-    { percentage: 96, label: 'Recommend to Friends' }
+    { 
+      percentage: 100, 
+      label: 'Customer Satisfaction', 
+      description: "Perfect score from our verified customers",
+      icon: <CheckCircle className="h-5 w-5" />
+    },
+    { 
+      percentage: 97, 
+      label: 'Effectiveness Rate', 
+      description: "Users report significant improvement",
+      icon: <Award className="h-5 w-5" />
+    },
+    { 
+      percentage: 96, 
+      label: 'Recommend to Friends', 
+      description: "Would recommend to friends and family",
+      icon: <ThumbsUp className="h-5 w-5" />
+    }
   ];
 
   return (
@@ -39,15 +55,16 @@ const ResultsSection: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
+              <div className="mb-6 w-10 h-10 rounded-full bg-medical/10 flex items-center justify-center text-medical">
+                {result.icon}
+              </div>
               <CircularProgress 
                 percentage={result.percentage} 
                 label={result.label} 
                 size="lg"
               />
               <p className="mt-6 text-center text-gray-600">
-                {result.percentage === 100 && "Perfect score from our verified customers"}
-                {result.percentage === 97 && "Users report significant improvement"}
-                {result.percentage === 96 && "Would recommend to friends and family"}
+                {result.description}
               </p>
             </motion.div>
           ))}
